@@ -33,9 +33,8 @@ $(document).ready(function() {
                 console.log('response', responseTwo);
                 $( "#saldo" ).empty();
                 $('#saldo').append(
-                    "<div class='nav-saldo'>Saldo</div>"+
-                    "<div class='header-saldo'>" +"El Saldo de tu BIP es "+ responseTwo.saldoTarjeta + "</div>"+
-                    "<div class='nav-saldo'>Fecha</div>"+
+                    "<div class='nav-saldo'>Saldo:</div>"+
+                    "<div class='header-saldo'>" + responseTwo.saldoTarjeta + "</div>"+
                     "<div class='nav-saldo '>Saldo a la fecha: </div>"+
                     "<div class='header-saldo div-nav'>"+ fechaPlata + "</div>");
                 var saldoObtenido = responseTwo.saldoTarjeta;
@@ -58,8 +57,8 @@ $(document).ready(function() {
        if(micro == '')
        {
             $( "#paradero" ).empty();
-            $('#paradero').append("<div class='nav-saldo'>Distancia</div>"+
-            "<div class='header-saldo'>" +"Debe ingresar una recorrido." + "</div>");
+            $('#paradero').append("<div class='nav-saldo'>Error</div>"+
+            "<div class='header-saldo'>" +"Debe ingresar un recorrido." + "</div>");
        }
        else
        {
@@ -79,13 +78,12 @@ $(document).ready(function() {
                if(demora!=null)
                {
                 $( "#paradero" ).empty();
-                $('#paradero').append("<div class='nav-saldo'>Distancia</div>"+
-                "<div class='header-saldo'>" +"La Distancia del bus es: "+ distanciabus + "</div>"+
-                "<div class='nav-saldo'>Demora</div>"+
-                "<div class='nav-saldo '>La Demora del bus es: </div>"+
+                $('#paradero').append("<div class='nav-saldo'>La distancia del bus es: </div>"+
+                "<div class='header-saldo'>" + distanciabus + " metros." + "</div>"+
+                "<div class='nav-saldo '>La demora del bus es: </div>"+
                 "<div class='header-saldo div-nav'>"+ demora + "</div>"+
-                "<div class='nav-saldo'>Patente</div>"+
-                "<div class='header-saldo'>" +"la patente del bus es: "+ patente + "</div>");
+                "<div class='nav-saldo'>La patente del bus es: </div>"+
+                "<div class='header-saldo'>" + patente + "</div>");
                //var saldoObtenido = transantiago.saldoTarjeta;
                // Saldo de la tarjeta
                console.log('DISTANA', distanciabus);
@@ -101,7 +99,7 @@ $(document).ready(function() {
               
            })
                 .fail(function() {
-               alert("ingrese numero de tarjeta validad")
+               alert("ingrese numero de tarjeta valida")
                 })
            .always(function() {
                console.log('complete')

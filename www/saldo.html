@@ -19,7 +19,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Hola <span id="nombrelocal"></span></a>
+      <p class="navbar-brand">Hola <span id="nombrelocal"></span></p>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,8 +64,9 @@
 </nav>
 
 <section class="tarjeta">
-    <div class="container text-center">
+    <div class="container text-center saldo">
       <div class="row">
+        <label>Ingrese nº de Tarjeta</label>
         <div class="col-md-12 col-xs-12 tarjeta-div">
           <input id="input-tarjeta" type="number" class="input-saldo" placeholder="Número Tarjeta">
         </div>
@@ -84,11 +85,15 @@
         </div>
       </div>
     </div>
-        <div class="container text-center">
+    <div class="container text-center saldo">
      <div class="row">
-       <div class="col-md-12 col-xs-12 tarjeta-div">
-         <input id="input-transantiago" type="text" class="input-paradero" placeholder="Código Paradero">
-         <input id="input-transantiago" type="text" class="input-micro" placeholder="Micro">
+       <div class="col-md-6 col-xs-6 tarjeta-div">
+       <label>Ingrese nº de Paradero</label>
+         <input id="input-transantiago" type="text" class="input-paradero" placeholder="Nº Paradero">
+       </div>
+       <div class="col-md-6 col-xs-6 tarjeta-div">
+        <label>Ingrese nº de Micro</label>
+         <input id="input-transantiago" type="text" class="input-micro" placeholder="Nº micro">
        </div>
      </div>
      <div class="row">
@@ -104,9 +109,7 @@
          <!--paradero-->
        </div>
      </div>
-
-
-   </div>
+    </div>
   </section>
 
 
