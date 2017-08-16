@@ -5,14 +5,14 @@ $(document).ready(function() {
             datatype: 'JSON',
         })
         .done(function(response) {
-            console.log('prueba');
-            console.log(response);
+            //console.log('prueba');
+            //console.log(response);
         })
         .fail(function() {
-            console.log('error')
+            //console.log('error')
         })
         .always(function() {
-            console.log('complete')
+            //console.log('complete')
         });
 })
 
@@ -28,73 +28,90 @@ $(document).ready(function() {
                 datatype: 'JSON',
             })
             .done(function(responseTwo) {
+                var plata = responseTwo.saldoTarjeta;
+                var fechaPlata = responseTwo.fechaSaldo;
                 console.log('response', responseTwo);
-                $('#saldo').append(` 
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-md-12 div-saldo">
-                                <div class="card" id="container-saldo">
-                                    <div class="card-content title-card-saldo">
-                                        <div class="nav-saldo">SALDO TOTAL</div>
-                                    </div>
-                                    <div class="header-saldo title-info-saldo">
-                                        <span>${responseTwo.saldoTarjeta}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`);
+                $( "#saldo" ).empty();
+                $('#saldo').append(
+                    "<div class='nav-saldo'>Saldo</div>"+
+                    "<div class='header-saldo'>" +"El Saldo de tu BIP es "+ responseTwo.saldoTarjeta + "</div>"+
+                    "<div class='nav-saldo'>Fecha</div>"+
+                    "<div class='nav-saldo '>Saldo a la fecha: </div>"+
+                    "<div class='header-saldo div-nav'>"+ fechaPlata + "</div>");
                 var saldoObtenido = responseTwo.saldoTarjeta;
                 // Saldo de la tarjeta
                 console.log('SALDO', saldoObtenido);
             })
             .fail(function() {
+                $( "#saldo" ).empty();
                 alert("ingrese numero de tarjeta validad")
         })
             .always(function() {
                 console.log('complete')
             });
-    })
-})
+    });
+
+
+     $('#btn-paradero').on('click', function() {
+       var codigo = $('.input-paradero').val();
+       var micro = $('.input-micro').val();
+       if(micro == '')
+       {
+            $( "#paradero" ).empty();
+            $('#paradero').append("<div class='nav-saldo'>Distancia</div>"+
+            "<div class='header-saldo'>" +"Debe ingresar una recorrido." + "</div>");
+       }
+       else
+       {
+                   $.ajax({
+               url: `http://www.transantiago.cl/predictor/prediccion?codsimt=${codigo}&codser=${micro}`,
+               type: 'GET',
+               datatype: 'JSON',
+           })
+
+                              .done(function(transantiago) {
+               console.log('response', transantiago);
+               var distanciabus = transantiago.servicios.item[0].distanciabus1;
+               var demora = transantiago.servicios.item[0].horaprediccionbus1;
+               var patente = transantiago.servicios.item[0].ppubus1;
+               var mensajeError = transantiago.respuestaParadero;
+               console.log(distanciabus + " " + demora + " " + patente + " " + mensajeError);
+               if(demora!=null)
+               {
+                $( "#paradero" ).empty();
+                $('#paradero').append("<div class='nav-saldo'>Distancia</div>"+
+                "<div class='header-saldo'>" +"La Distancia del bus es: "+ distanciabus + "</div>"+
+                "<div class='nav-saldo'>Demora</div>"+
+                "<div class='nav-saldo '>La Demora del bus es: </div>"+
+                "<div class='header-saldo div-nav'>"+ demora + "</div>"+
+                "<div class='nav-saldo'>Patente</div>"+
+                "<div class='header-saldo'>" +"la patente del bus es: "+ patente + "</div>");
+               //var saldoObtenido = transantiago.saldoTarjeta;
+               // Saldo de la tarjeta
+               console.log('DISTANA', distanciabus);
+               console.log('Demora', demora);
+               console.log('patente', patente);
+               }
+               else
+                {
+                    $( "#paradero" ).empty();
+                    $('#paradero').append("<div class='nav-saldo'>Distancia</div>"+
+                "<div class='header-saldo'>" + mensajeError + "</div>");
+                }
+              
+           })
+                .fail(function() {
+               alert("ingrese numero de tarjeta validad")
+                })
+           .always(function() {
+               console.log('complete')
+           });
+       }
+
+
+
+   })
+});
 
 
 /*FIN VER SALDO*/
-
-
-/*calcular tarifa*/
-$('#calculartarifa').click(function(response){
-    var inputsaldo = $('#ntarjeta').val();
-    var tarifa = $('#selectTarifa').val();
-    console.log (inputsaldo);
-    console.log (tarifa);
-
-    $.ajax({
-        url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip='+inputsaldo,
-        type: 'GET',
-        datatype: 'JSON',
-    })
-    //pasar todo a string
-    .done(function(response) {
-            console.log(response);
-            var numsaldo = response.saldoTarjeta;
-            var quitardig = numsaldo.replace("$","");
-            var quitarpunto = quitardig.replace(".","");
-            var saldo = parseInt(quitarpunto);
-            var final = saldo - tarifa
-            $('#muestratarifa').append("<div class='nav-saldo'>COSTO PASAJE</div>"+
-                "<div class='header-saldo'>" +"$ "+ tarifa + "</div>"+
-                "<div class='nav-saldo '>SALDO FINAL</div>"+
-                "<div class='header-saldo div-nav'>" +"$ "+ final + "</div>");
-        })
-        .fail(function() {
-            console.log('Error')
-        })
-        .always(function() {
-            console.log('Completado')
-        });
-
-    
-})
-
-
-
