@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <title>Trans-lab</title>
+     <!-- favicon -->
+     <link rel="shortcut icon" type="image/png" href="img/imagen.png" />
+     <!--BOOTSTRAP-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Hoja de estilos -->
+     <link rel="stylesheet" type="text/css" href="css/style3.css">
+     <!-- FONT AWESOME -->
+    <script src="https://use.fontawesome.com/be0dd1e218.js"></script>
+   </head>
+   <body>
+		<!--PAGINA 4-->
+    <!--ver saldo-->
+  <!--Navbar MENU -->
+  <!--<section class="navBar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-xs-2">
+          <a><h1><i class="fa fa-bars" aria-hidden="true"></i></h1></a>
+        </div>
+        <div class="col-md-10 col-xs-10">
+          <h1>TRANS-LAB</h1>
+        </div>
+      </div>
+    </div>
+  </section>-->
+        <div class="container-fluid">
+        <div class="navbar-header text-center">
+          <i class="fa fa-bars fa-2x blanco icono" aria-hidden="true" id="openNav"></i>
+            <span class="blanco text-trans-lab">TRANS-LAB</span>
+        </div>
+       </div><!-- /.container-fluid -->
+    <!--PROBANDO SIDENAV-->
+    <div id="mySidenav" class="sidenav">
+        <i class="fa fa-times closebtn" aria-hidden="true" id="closeNav"></i>
+        <a href="versaldo.html" class="mder"><i class="fa fa-usd" aria-hidden="true"></i>Ver Saldo</a>
+        <a href="tarifa.html" class="mder"><i class="fa fa-th" aria-hidden="true"></i>Calcular Tarifa</a>
+        <a href="perfil.html" class="mder"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a>
+        <a href="preguntas.html" class="mder"><i class="fa fa-file-text" aria-hidden="true"></i>Preguntas Frecuentes</a>
+        <a href="opciones.html" class="mder"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Home</a>
+    </div>
+    <!--TARJETA BIP-->
+  <section class="tarjeta">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-xs-12 tarjeta-div">
+          <input id="input-tarjeta" type="number" class="input-saldo" placeholder="Número Tarjeta">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12 text-center select-div">
+            <select class="select">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12 btn-div">
+          <a href="#"><button id="btn-saldo" type="submit" class="btn btn-default">VER SALDO</button></a>
+          <div id="mensaje3" class="errores text-center">
+            <!--error aquí -->
+            ingrese tarjeta
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12 container" id="saldo">
+          <!--saldo-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+     <!-- mi archivo de js -->
+     <script type="text/javascript" src="js/main.js"></script>
+     <script type="text/javascript" src="js/api.js"></script>
+   </body>
+ </html>
