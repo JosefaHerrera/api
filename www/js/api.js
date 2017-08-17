@@ -70,14 +70,13 @@ $(document).ready(function() {
        }
        else
        {
-                   $.ajax({
-               url: `http://www.transantiago.cl/predictor/prediccion?codsimt=${codigo}&codser=${micro}`,
-               type: 'GET',
-               datatype: 'JSON',
+              $.ajax({
+              url: `http://www.transantiago.cl/predictor/prediccion?codsimt=${codigo}&codser=${micro}`,
+              type: 'GET',
+              datatype: 'JSON',
            })
 
-                              .done(function(transantiago) {
-               //console.log('response', transantiago);
+                .done(function(transantiago) {
                var distanciabus = transantiago.servicios.item[0].distanciabus1;
                var demora = transantiago.servicios.item[0].horaprediccionbus1;
                var patente = transantiago.servicios.item[0].ppubus1;
@@ -92,29 +91,14 @@ $(document).ready(function() {
                 "<div class='header-saldo div-nav'>"+ demora + "</div>"+
                 "<div class='nav-saldo'>La patente del bus es: </div>"+
                 "<div class='header-saldo'>" + patente + "</div>");
-               //var saldoObtenido = transantiago.saldoTarjeta;
-               // Saldo de la tarjeta
-               //console.log('DISTANA', distanciabus);
-               //console.log('Demora', demora);
-               //console.log('patente', patente);
                }
                else
                 {
                     $( "#paradero" ).empty();
                     $('#paradero').append("<div class='nav-saldo'>Mensaje</div>"+
                     "<div class='header-saldo'>" + mensajeError + "</div>");
-                }
-              
+                }      
            })
-           .always(function() {
-               //console.log('complete')
-           });
        }
-
-
-
    })
 });
-
-
-/*FIN VER SALDO*/
