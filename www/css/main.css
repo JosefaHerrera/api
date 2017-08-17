@@ -5798,13 +5798,13 @@ button.close {
   .hidden-print {
     display: none !important; } }
 body {
-  background-image: url(../img/tarjeta-bip-chile.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 1000px;
-  background-position: center;
-  background-position-y: bottom;
+  	/*background-image: url(../img/tarjeta-bip-chile.jpg);
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 1000px;
+      background-position: center;
+      background-position-y: bottom;*/
+  background-color: #ffb800;
   font-family: 'Droid Sans', sans-serif; }
 
 .formulario1 .error {
@@ -5814,12 +5814,21 @@ body {
   margin-top: 1px;
   text-shadow: 1px 1px black; }
 
+img {
+  width: 76%;
+  margin-left: 52px; }
+
 .btn2 {
   margin-top: 11px;
-  font-size: 19px;
-  background-color: #99be4c;
+  font-size: 23px;
+  background-color: #1572b1;
   border: none;
-  color: white; }
+  color: white;
+  border-radius: 40px;
+  width: 67%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* height: 100%; */ }
 
 .form-control {
   font-size: 20px;
@@ -5828,10 +5837,10 @@ body {
   height: 34px;
   padding: 6px 12px;
   line-height: 1.428571429;
-  color: #ff9100;
+  color: #1572b1;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #264f8c;
+  border: 1px solid #1572b1;
   border-radius: 100px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -5840,24 +5849,28 @@ body {
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
 
 .navbar-default {
-  background-color: #004d8a;
-  border-color: #004d84; }
+  background-color: #1572b1;
+  border-color: #1572b1; }
 
 .navbar-default .navbar-brand {
-  color: #ff9100; }
+  color: #ffb800; }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #ff9100; }
+  background-color: #ffb800; }
 
 .navbar-default .navbar-toggle {
-  border-color: #ff9100; }
-
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #ff9100;
-  background-color: transparent; }
+  border-color: #ffb800;
+  color: white;
+  background-color: #ffb800; }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #004d8a; }
+  background-color: #ffb800; }
+
+.navbar-default .navbar-nav > li > a {
+  color: white; }
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #ffb800; }
 
 h1 {
   font-family: 'Droid Sans', sans-serif;
@@ -5869,8 +5882,8 @@ h1 {
 
 .btn-default:hover {
   color: #fff;
-  background-color: #d49129;
-  border-color: #d4932b; }
+  background-color: #ffb800;
+  border-color: #ffb800; }
 
 .menu a {
   font-size: 20px; }
@@ -5884,7 +5897,7 @@ h1 {
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
-  background-color: #738ace;
+  background-color: #1572b1;
   color: #ffffff;
   vertical-align: middle;
   -ms-touch-action: manipulation;
@@ -5898,11 +5911,13 @@ h1 {
   border: 1px solid transparent;
   border-radius: 0px;
   margin-top: 18px;
-  font-size: 20px; }
+  font-size: 20px;
+  border-radius: 40px; }
 
 .tarjeta label {
+  margin-top: 10px;
   color: white;
-  font-size: 13px;
+  font-size: 20px;
   letter-spacing: 2px;
   text-shadow: 1px 1px black; }
 .tarjeta .saldo {
@@ -5915,10 +5930,10 @@ h1 {
   height: 34px;
   padding: 6px 12px;
   line-height: 1.428571429;
-  color: #ff9100;
+  color: #1572b1;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #264f8c;
+  border: 1px solid #1572b1;
   border-radius: 100px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -5926,7 +5941,12 @@ h1 {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
 .tarjeta .btn {
-  margin-top: 10px; }
+  margin-top: 10px;
+  background-color: #1572b1;
+  color: white;
+  border-color: #1572b1;
+  margin-bottom: 10px;
+  border-radius: 40px; }
 
 .div-saldo {
   padding-top: 30px;
@@ -5934,7 +5954,7 @@ h1 {
   padding-right: 50px; }
 
 .nav-saldo {
-  background-color: #004d8a;
+  background-color: #1572b1;
   color: white;
   padding-left: 50px;
   padding-right: 50px;
@@ -5946,10 +5966,11 @@ h1 {
   box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75); }
 
 .header-saldo {
-  background-color: #f6a800;
+  background-color: #ffb800;
   color: white;
   font-size: 25px;
   font-weight: bolder;
+  margin-bottom: 14px;
   padding: 20px;
   padding-left: 50px;
   padding-right: 50px;
@@ -5960,5 +5981,63 @@ h1 {
 
 .div-nav {
   margin-bottom: 20px; }
+
+#horarios {
+  color: white; }
+  #horarios .header-horarios {
+    background-color: #ffb800;
+    color: white;
+    /* margin-bottom: 14px; */
+    padding: 5px;
+    /* padding-left: 50px; */
+    /* padding-right: 50px; */
+    /*border-radius: 11px;*/
+    -webkit-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75); }
+  #horarios .nav-horario {
+    background-color: #1572b1;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* margin-top: 15px; */
+    /* font-size: 20px; */
+    /* border-radius: 11px; */
+    -webkit-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75); }
+
+.panel-default > .panel-heading {
+  color: white;
+  background-color: #1572b1;
+  border-color: #1572b1;
+  text-decoration: none; }
+  .panel-default > .panel-heading a:hover, .panel-default > .panel-heading a:focus {
+    color: #ffb800;
+    text-decoration: none; }
+
+.panel-default {
+  border-color: #1572b1; }
+
+.amarillo {
+  color: #ffb800; }
+
+.foooter {
+  background-color: #1572b1;
+  border-top: 1px solid #1572b1;
+  color: white;
+  padding-top: 7px;
+  font-size: 15px; }
+  .foooter a {
+    color: #ffb800;
+    text-decoration: none; }
+
+footer {
+  bottom: 0;
+  position: absolute;
+  padding-top: 20px;
+  height: 40px;
+  width: 100%;
+  position: fixed; }
 
 /*# sourceMappingURL=main.css.map */

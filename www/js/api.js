@@ -22,7 +22,10 @@ $(document).ready(function() {
     // Evento para el boton de saldo que comprueba si el número es válido
     $('#btn-saldo').on('click', function() {
         var numTarjetaSaldo = $('.input-saldo').val();
-        $.ajax({
+        var tarjetaVacia = "Por favor, ingrese un número de tarjeta";
+        if (numTarjetaSaldo != '')
+        {
+                  $.ajax({
                 url: `http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${numTarjetaSaldo}`,
                 type: 'GET',
                 datatype: 'JSON',
@@ -41,13 +44,18 @@ $(document).ready(function() {
                 // Saldo de la tarjeta
                 console.log('SALDO', saldoObtenido);
             })
-            .fail(function() {
-                $( "#saldo" ).empty();
-                alert("ingrese numero de tarjeta validad")
-        })
             .always(function() {
                 console.log('complete')
             });
+        }
+        else
+        {
+            $( "#saldo" ).empty();
+            $('#saldo').append(
+            "<div class='nav-saldo'>Saldo:</div>"+
+            "<div class='header-saldo'>" + tarjetaVacia + "</div>");
+        }
+
     });
 
 
@@ -94,13 +102,10 @@ $(document).ready(function() {
                 {
                     $( "#paradero" ).empty();
                     $('#paradero').append("<div class='nav-saldo'>Distancia</div>"+
-                "<div class='header-saldo'>" + mensajeError + "</div>");
+                    "<div class='header-saldo'>" + mensajeError + "</div>");
                 }
               
            })
-                .fail(function() {
-               alert("ingrese numero de tarjeta valida")
-                })
            .always(function() {
                console.log('complete')
            });
