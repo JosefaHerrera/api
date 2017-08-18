@@ -25,7 +25,7 @@ $(document).ready(function() {
         var tarjetaVacia = "Por favor, ingrese un número de tarjeta";
         if (numTarjetaSaldo != '')
         {
-                  $.ajax({
+                $.ajax({
                 url: `http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${numTarjetaSaldo}`,
                 type: 'GET',
                 datatype: 'JSON',
@@ -33,20 +33,19 @@ $(document).ready(function() {
             .done(function(responseTwo) {
                 var plata = responseTwo.saldoTarjeta;
                 var fechaPlata = responseTwo.fechaSaldo;
-                //console.log('response', responseTwo);
                 $( "#saldo" ).empty();
                 $('#saldo').append(
                     "<div class='nav-saldo'>Saldo:</div>"+
-                    "<div class='header-saldo'>" + responseTwo.saldoTarjeta + "</div>"+
+                    "<div class='header-saldo'>" + plata + "</div>"+
                     "<div class='nav-saldo '>Saldo a la fecha: </div>"+
                     "<div class='header-saldo div-nav'>"+ fechaPlata + "</div>");
-                var saldoObtenido = responseTwo.saldoTarjeta;
-                // Saldo de la tarjeta
-                //console.log('SALDO', saldoObtenido);
             })
-            .always(function() {
-                //console.log('complete')
-            });
+            .fail(function() {
+              $( "#saldo" ).empty();
+              $('#saldo').append(
+              "<div class='nav-saldo'>Error</div>"+
+              "<div class='header-saldo'> Lo sentimos =( <br> El número de tu Bip! no es valida.</div>");
+            })
         }
         else
         {
@@ -66,23 +65,21 @@ $(document).ready(function() {
        {
             $( "#paradero" ).empty();
             $('#paradero').append("<div class='nav-saldo'>Error</div>"+
-            "<div class='header-saldo'>" +"Debe ingresar un recorrido." + "</div>");
+            "<div class='header-saldo'>" +"Debes ingresar un recorrido." + "</div>");
        }
        else
        {
-                   $.ajax({
-               url: `http://www.transantiago.cl/predictor/prediccion?codsimt=${codigo}&codser=${micro}`,
-               type: 'GET',
-               datatype: 'JSON',
+              $.ajax({
+              url: `http://www.transantiago.cl/predictor/prediccion?codsimt=${codigo}&codser=${micro}`,
+              type: 'GET',
+              datatype: 'JSON',
            })
 
-                              .done(function(transantiago) {
-               //console.log('response', transantiago);
+                .done(function(transantiago) {
                var distanciabus = transantiago.servicios.item[0].distanciabus1;
                var demora = transantiago.servicios.item[0].horaprediccionbus1;
                var patente = transantiago.servicios.item[0].ppubus1;
                var mensajeError = transantiago.respuestaParadero;
-               //console.log(distanciabus + " " + demora + " " + patente + " " + mensajeError);
                if(demora!=null)
                {
                 $( "#paradero" ).empty();
@@ -92,29 +89,14 @@ $(document).ready(function() {
                 "<div class='header-saldo div-nav'>"+ demora + "</div>"+
                 "<div class='nav-saldo'>La patente del bus es: </div>"+
                 "<div class='header-saldo'>" + patente + "</div>");
-               //var saldoObtenido = transantiago.saldoTarjeta;
-               // Saldo de la tarjeta
-               //console.log('DISTANA', distanciabus);
-               //console.log('Demora', demora);
-               //console.log('patente', patente);
                }
                else
                 {
                     $( "#paradero" ).empty();
                     $('#paradero').append("<div class='nav-saldo'>Mensaje</div>"+
                     "<div class='header-saldo'>" + mensajeError + "</div>");
-                }
-              
+                }      
            })
-           .always(function() {
-               //console.log('complete')
-           });
        }
-
-
-
    })
 });
-
-
-/*FIN VER SALDO*/

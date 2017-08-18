@@ -1,0 +1,279 @@
+$amarillo: #ffb800;
+$azul: #1572b1;
+
+body{
+	/*background-image: url(../img/tarjeta-bip-chile.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+    background-position: center;
+    background-position-y: bottom;*/
+    background-color: $amarillo;
+    font-family: 'Droid Sans', sans-serif;
+    
+}
+
+.formulario1{
+.error {
+    color: white;
+    display: none;
+    font-size: 16px;
+    margin-top: 1px;
+    text-shadow: 1px 1px black;
+}
+}
+h1{
+	margin-top: 60px;
+}
+img{
+    width: 76%;
+    margin-left: 52px;
+
+}
+.btn2 {
+    margin-top: 11px;
+    font-size: 23px;
+    background-color: #1572b1;
+    border: none;
+    color: white;
+    border-radius: 40px;
+    width: 67%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* height: 100%; */
+}
+.form-control {
+	font-size: 20px;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    color: $azul;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid $azul;
+    border-radius: 100px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.navbar-default {
+    background-color: $azul;
+    border-color: $azul;
+}
+.navbar-default .navbar-brand {
+    color: $amarillo;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: $amarillo;
+}
+.navbar-default .navbar-toggle {
+    border-color: $amarillo;
+    color: white;
+    background-color: $amarillo;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: $amarillo;
+}
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: $amarillo;
+}
+h1{
+	font-family: 'Droid Sans', sans-serif;
+	font-family: 'Anton', sans-serif;
+	color: white;
+    text-shadow: 2px 2px black;
+    font-size: 54px;
+    text-align: center;
+}
+.btn-default:hover {
+    color: #fff;
+    background-color: $amarillo;
+    border-color: $amarillo;
+}
+
+.menu{
+	a{
+	font-size: 20px;
+	}
+	.btn{display: inline-block;
+    width: 100%;
+    padding: 20px 20px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $azul;
+    color: #ffffff;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    margin-top: 18px;
+   	font-size: 20px;
+   	border-radius: 40px;
+}
+}
+
+
+.tarjeta{
+	label {
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px black;
+}
+	.saldo{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+	input{
+	font-size: 15px;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    color: $azul;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid $azul;
+    border-radius: 100px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	}
+	.btn{
+	margin-top: 10px;
+    background-color: $azul;
+    color: white;
+    border-color: $azul;
+    margin-bottom: 10px;
+    border-radius: 40px;
+	}
+}
+
+.div-saldo {
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    }
+
+
+.nav-saldo {
+    background-color: $azul;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 15px;
+    font-size: 20px;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 2px 23px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 23px -5px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 23px -5px rgba(0,0,0,0.75);
+
+}
+.header-saldo{
+    background-color: $amarillo;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 14px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 2px 23px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 23px -5px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 23px -5px rgba(0,0,0,0.75);
+}
+
+.div-nav{
+    margin-bottom:20px;
+}
+
+#horarios{
+	color:white;
+	.header-horarios {
+    background-color: #ffb800;
+    color: white;
+    /* margin-bottom: 14px; */
+    padding: 5px;
+    /* padding-left: 50px; */
+    /* padding-right: 50px; */
+    /*border-radius: 11px;*/
+    -webkit-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+}
+.nav-horario {
+    background-color: #1572b1;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* margin-top: 15px; */
+    /* font-size: 20px; */
+    /* border-radius: 11px; */
+    -webkit-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 23px -5px rgba(0, 0, 0, 0.75);
+}
+}
+
+.panel-default > .panel-heading {
+    color: white;
+    background-color: #1572b1;
+    border-color: #1572b1;
+    text-decoration: none;
+    a:hover, a:focus {
+    color: $amarillo;
+    text-decoration: none;
+}
+}
+.panel-default {
+    border-color: #1572b1;
+}
+.amarillo{
+	color:$amarillo;
+}
+
+
+
+.foooter {
+    background-color: $azul;
+    border-top: 1px solid $azul;
+    color:white;
+    padding-top: 7px;
+    font-size: 15px;
+    a {
+    color: $amarillo;
+    text-decoration: none;
+}
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    padding-top: 20px;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+}
